@@ -12,10 +12,7 @@ const Register = () => {
     const password = e.target.password.value;
     const name = e.target.name.value;
 
-    if (password.length < 6) return toast.error("Password must be at least 6 characters");
-    if (!/[A-Z]/.test(password)) return toast.error("Password must contain an uppercase letter");
-    if (!/[a-z]/.test(password)) return toast.error("Password must contain a lowercase letter");
-
+    
     createUser(email, password, name)
       .then(() => toast.success("Registration successful!"))
       .catch(() => toast.error("Email already in use"));
