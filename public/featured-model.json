@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "1",
+    "name": "GPT-4",
+    "framework": "OpenAI",
+    "image": "/assets/gpt4.png",
+    "description": "GPT-4 is a large multimodal model (accepting image and text inputs) that exhibits human-level performance on various professional and academic benchmarks."
+  },
+  {
+    "_id": "2",
+    "name": "DALL·E 3",
+    "framework": "OpenAI",
+    "image": "/assets/dalle3.png",
+    "description": "DALL·E 3 generates realistic images and art from a text description, enabling creators to produce high-quality visuals with AI."
+  },
+  {
+    "_id": "3",
+    "name": "YOLOv8",
+    "framework": "Ultralytics",
+    "image": "/assets/yolov8.png",
+    "description": "YOLOv8 is an advanced object detection and segmentation model known for real-time speed and accuracy in computer vision tasks."
+  },
+  {
+    "_id": "4",
+    "name": "BERT",
+    "framework": "HuggingFace",
+    "image": "/assets/bert.png",
+    "description": "BERT is a transformer-based model for natural language understanding, excelling in tasks such as question answering and sentiment analysis."
+  }
+]
