@@ -27,7 +27,6 @@ const Register = () => {
         <h2>Create Account</h2>
         <input name="name" placeholder="Full Name" required />
         <input name="email" type="email" placeholder="Email" required />
-        <input name="photo" placeholder="Photo URL (optional)" />
         <input name="password" type="password" placeholder="Password" required />
         <button className="btn primary full">Register</button>
         <p>Already have an account? <Link to="/login">Login</Link></p>

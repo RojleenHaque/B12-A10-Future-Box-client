@@ -28,7 +28,9 @@ const Navbar = () => {
       <div className="nav-actions">
         {user ? (
           <>
-            <span>{user.email}</span>
+            <span>
+  Welcome, {user?.displayName || user?.email}
+</span>
             <button className="btn primary" onClick={handleLogout}>
               Logout
             </button>

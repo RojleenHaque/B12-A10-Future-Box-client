@@ -8,30 +8,47 @@ const AddModel = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleSubmit = async e => {
-    e.preventDefault();
-    const data = {
-      name: e.target.name.value,
-      framework: e.target.framework.value,
-      useCase: e.target.useCase.value,
-      dataset: e.target.dataset.value,
-      description: e.target.description.value,
-      image: e.target.image.value,
-      createdBy: user.email,
-      createdAt: new Date(),
-      purchased: 0
-    };
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    try {
-      const res = await axios.post("http://localhost:5000/models", data);
-      if (res.data.insertedId) {
-        toast.success("Model added successfully!");
-        navigate("/models");
-      }
-    } catch (err) {
-      toast.error("Something went wrong");
-    }
+  // ✅ Check user
+  if (!user || !user.email) {
+    toast.error("You must be logged in");
+    return;
+  }
+
+  // ✅ Collect form data safely
+  const form = e.target;
+
+  const data = {
+    name: form.name.value.trim(),
+    framework: form.framework.value,
+    useCase: form.useCase.value.trim(),
+    dataset: form.dataset.value.trim(),
+    description: form.description.value.trim(),
+    image: form.image.value.trim(),
+    createdBy: user.email,
+    createdAt: new Date().toISOString(), // better format
+    purchased: 0
   };
+
+  try {
+    const res = await axios.post("http://localhost:5000/models", data);
+
+    // ✅ Success check
+    if (res.data?.insertedId) {
+      toast.success("Model added successfully!");
+      form.reset(); // clear form
+      navigate("/models");
+    } else {
+      toast.error("Failed to add model");
+    }
+  } catch (err) {
+    // ✅ Show real error
+    console.error("Add Model Error:", err.response?.data || err.message);
+    toast.error(err.response?.data?.error || "Something went wrong");
+  }
+};
 
   return (
     <div className="form-container">
