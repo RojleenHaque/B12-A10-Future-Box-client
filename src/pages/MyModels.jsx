@@ -11,7 +11,7 @@ const MyModels = () => {
 
   useEffect(() => {
     if (user?.email) {
-      axios.get(`http://localhost:5000/my-models/${user.email}`)
+      axios.get(`https://b12-a10-future-box-server-gamma.vercel.app/my-models/${user.email}`)
         .then(res => setMyModels(res.data))
         .catch(() => toast.error("Failed to fetch your models"));
     }

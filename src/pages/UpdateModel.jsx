@@ -9,7 +9,7 @@ const UpdateModel = () => {
   const [model, setModel] = useState({});
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/models/${id}`)
+    axios.get(`https://b12-a10-future-box-server-gamma.vercel.app/models/${id}`)
       .then(res => setModel(res.data))
       .catch(() => toast.error("Failed to fetch model"));
   }, [id]);

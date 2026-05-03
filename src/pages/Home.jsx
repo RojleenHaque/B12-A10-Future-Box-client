@@ -6,7 +6,7 @@ const Home = () => {
   const [featured, setFeatured] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/featured-models")
+    axios.get("https://b12-a10-future-box-server-gamma.vercel.app/featured-models")
       .then(res => setFeatured(res.data))
       .catch(err => console.error(err));
   }, []);

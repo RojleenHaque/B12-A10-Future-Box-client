@@ -33,7 +33,7 @@ const handleSubmit = async (e) => {
   };
 
   try {
-    const res = await axios.post("http://localhost:5000/models", data);
+    const res = await axios.post("https://b12-a10-future-box-server-gamma.vercel.app/models", data);
 
     // ✅ Success check
     if (res.data?.insertedId) {
