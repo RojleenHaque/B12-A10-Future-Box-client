@@ -11,13 +11,13 @@ const AddModel = () => {
 const handleSubmit = async (e) => {
   e.preventDefault();
 
-  // ✅ Check user
+  //  Check user
   if (!user || !user.email) {
     toast.error("You must be logged in");
     return;
   }
 
-  // ✅ Collect form data safely
+  //  Collect form data safely
   const form = e.target;
 
   const data = {
@@ -33,9 +33,9 @@ const handleSubmit = async (e) => {
   };
 
   try {
-    const res = await axios.post("https://b12-a10-future-box-server-gamma.vercel.app/models", data);
+    const res = await axios.post("https://b12-a10-future-box-server-h811.onrender.com/models", data);
 
-    // ✅ Success check
+    //  Success check
     if (res.data?.insertedId) {
       toast.success("Model added successfully!");
       form.reset(); // clear form
@@ -44,7 +44,7 @@ const handleSubmit = async (e) => {
       toast.error("Failed to add model");
     }
   } catch (err) {
-    // ✅ Show real error
+    //  Show real error
     console.error("Add Model Error:", err.response?.data || err.message);
     toast.error(err.response?.data?.error || "Something went wrong");
   }

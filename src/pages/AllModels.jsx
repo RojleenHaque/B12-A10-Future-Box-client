@@ -8,7 +8,7 @@ const AllModels = () => {
   const [framework, setFramework] = useState("All");
 
   useEffect(() => {
-    axios.get(`https://b12-a10-future-box-server-gamma.vercel.app/models?search=${search}&framework=${framework}`)
+    axios.get(`https://b12-a10-future-box-server-h811.onrender.com/models?search=${search}&framework=${framework}`)
       .then(res => setModels(res.data))
       .catch(err => console.error(err));
   }, [search, framework]);

@@ -11,7 +11,7 @@ const MyModels = () => {
 
   useEffect(() => {
     if (user?.email) {
-      axios.get(`https://b12-a10-future-box-server-gamma.vercel.app/my-models/${user.email}`)
+      axios.get(`https://b12-a10-future-box-server-h811.onrender.com/my-models/${user.email}`)
         .then(res => setMyModels(res.data))
         .catch(() => toast.error("Failed to fetch your models"));
     }
@@ -19,7 +19,7 @@ const MyModels = () => {
 
   const handleDelete = id => {
     if (!window.confirm("Are you sure you want to delete this model?")) return;
-    axios.delete(`http://localhost:5000/models/${id}`)
+    axios.delete(`https://b12-a10-future-box-server-h811.onrender.com/models/${id}`)
       .then(res => {
         if (res.data.deletedCount > 0) {
           toast.success("Deleted successfully!");

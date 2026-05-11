@@ -2,7 +2,7 @@
 
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGithub } from "react-icons/fa";
 //import './Footer.css';
-
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="footer">
@@ -14,10 +14,10 @@ const Footer = () => {
 
         <div className="footer-links">
           <h4>Quick Links</h4>
-          <a href="/">Home</a>
-          <a href="/models">Models</a>
-          <a href="/add-model">Add Model</a>
-          <a href="/register">Register</a>
+          <Link to="/">Home</Link>
+          <Link to="/models">Models</Link>
+          <Link to="/add-model">Add Model</Link>
+          <Link to="/register">Register</Link>
         </div>
 
         <div className="footer-social">

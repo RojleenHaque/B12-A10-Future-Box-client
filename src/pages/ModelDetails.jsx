@@ -10,13 +10,13 @@ const ModelDetails = () => {
   const [model, setModel] = useState(null);
 
   useEffect(() => {
-    axios.get(`https://b12-a10-future-box-server-gamma.vercel.app/models/${id}`)
+    axios.get(`https://b12-a10-future-box-server-h811.onrender.com/models/${id}`)
       .then(res => setModel(res.data))
       .catch(() => toast.error("Failed to fetch model"));
   }, [id]);
 
   const handlePurchase = () => {
-    axios.patch(`https://b12-a10-future-box-server-gamma.vercel.app/purchase/${id}`)
+    axios.patch(`https://b12-a10-future-box-server-h811.onrender.com/purchase/${id}`)
       .then(res => {
         if (res.data.modifiedCount > 0) {
           toast.success("Purchase successful!");

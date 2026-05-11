@@ -9,7 +9,7 @@ const UpdateModel = () => {
   const [model, setModel] = useState({});
 
   useEffect(() => {
-    axios.get(`https://b12-a10-future-box-server-gamma.vercel.app/models/${id}`)
+    axios.get(`https://b12-a10-future-box-server-h811.onrender.com/models/${id}`)
       .then(res => setModel(res.data))
       .catch(() => toast.error("Failed to fetch model"));
   }, [id]);
@@ -20,7 +20,7 @@ const UpdateModel = () => {
       name: e.target.name.value,
       description: e.target.description.value
     };
-    axios.patch(`http://localhost:5000/update-model/${id}`, updatedData)
+    axios.patch(`https://b12-a10-future-box-server-h811.onrender.com/update-model/${id}`, updatedData)
       .then(() => {
         toast.success("Model updated!");
         navigate("/my-models");
